@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+body {
+    background-color: #bbddbb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #006c00;
+}
+
+/* Como o id # é unico, ou seja só um elemento
+no html pode ter o id especificado, podemos fazer
+como esta aqui: h1#principal, ou simplesmente:
+#principal */
+h1#principal {
+    text-align: center;
+    background-color:  #407240;
+    color: white;
+}
+
+h2 {
+    color: #1f7e28;
+}
+
+.basico {
+    color: #439d5e;
+    font-weight: bold;
+}
+
+.intermediario {
+    color: #a4af63;
+}
+
+.avancado {
+    color: #ce4e4e;
+}
+
+.destaque {
+    background-color: #ced56b;
+}

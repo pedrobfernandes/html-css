@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modelo de Caixas</title>
+
+    <style>
+        h1 {
+            background-color: lightgray;
+            height: 300px;
+            width: 300px;
+            /*border-width: 10px;*/
+            /*border-style: solid;*/
+            /*border-color: darkslategray;*/
+
+            /* Ordem: tamanho estilo cor */
+            border: 10px solid darkslategray;
+
+            /*padding-top: 10px;*/
+            /*padding-right: 10px;*/
+            /*padding-bottom: 10px;*/
+            /*padding-left: 10px;*/
+
+            /* top -> right -> bottom -> left */
+            /* padding: 10px 10px 10px 10px; */
+
+            /* Todas -> se todas forem iguais*/
+            padding: 10px;
+
+            /* top/bottom right/left  -> se cada par for igual
+            ou seja podemos: padding: 20 30 -> que diz, que top e bottom é 20
+            e rigth e left é 30*/
+            /*padding: 20px 30px;*/
+
+
+
+            /* margin é igual a regra á do padding.. */
+            /*margin-top: 20px;*/
+            /*margin-right: 20px;*/
+            /*margin-bottom: 40px;*/
+            /*margin-left: 20px;*/
+
+            /*usa ssim porque tem uma (bottom) que é 40px */
+            /*margin: 20px 20px 40px 20px;*/
+
+            /* Podemos usar oauto para centralizar, por exemplo
+            vamos centralizar na horizontal (direita e esquerda),
+            usando o auto. Podemos usar margin: auto, e centraliza tudo
+            ou fazer assim: */
+            margin: 20px auto 40px auto;
+
+            /* assim: margin: auto;
+            ia centralizar acima abaixo direita e esquerda,
+            Mas ia perder os 40 px da margem de baixo, os 20px
+            da margem de cima. */
+
+            /*outline-width: 5px;*/
+            /*outline-style: dashed;*/
+            /*outline-color: salmon;*/
+
+            /* Ordem: tamanho estilo cor */
+            outline: 5px dashed salmon;
+        }
+
+        a {
+            border-width: 10px;
+            border-style: solid;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de caixa block-level</h1>
+    <p>
+        Parágrafos também são exemplos de block-level,
+        mas os <a href="#">links são exemplos de caixas inline-level</a>.
+        Vamos ver como tudo isso funciona
+    </p>
+</body>
+</html>

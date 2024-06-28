@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fontes Externas</title>
+    <style>
+        @font-face {
+            font-family: 'Love';
+            src: url('fonts/love-story-ttf.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+
+            /*
+                Tipos de format()
+
+                - opentype (otf)
+                - truetype (ttf)
+                - embedded-opentype
+                - truetype-aat (Apple Advanced Typography)
+                - svg
+
+                Para colocar mais que uma fonte, basta depois
+                de src: url() format(), colocar virgula e repetir:
+
+                src: url(fonte1) format(formato1), url(fonte2) format(formato2)...
+
+                - É bom colocar dois tipos (ao contrario do que fiz aqui), uma ttf e um otf, assim fica mais
+                seguro de caso um navaegador não soportar um suportar o outro.
+            */
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            font-family: Love, Times, serif;
+            font-size: 3em;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>Título</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultricies sagittis orci, nec consequat dolor consequat ac. Nulla eleifend rutrum semper. Sed fringilla, ligula eu gravida tempor, quam magna blandit dolor, quis imperdiet sapien erat eu nibh. Nunc rutrum pulvinar nulla in facilisis. Quisque feugiat purus in leo condimentum non congue eros consectetur. Praesent dictum consequat nulla, bibendum rhoncus enim adipiscing et. Pellentesque mi tellus, ornare id mattis ac, sollicitudin a erat. Maecenas sit amet vehicula odio.
+    </p>
+
+</body>
+</html>

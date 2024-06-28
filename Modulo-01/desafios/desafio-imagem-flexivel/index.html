@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Imagen Flexível</title>
+</head>
+<body>
+    <h1>Imagen Flexível</h1>
+
+    <p>
+        Você está vendo a imagem completa?
+        Experimente ampliar o tamanho da sua janela
+        para aproveitar melhor a experiência.
+    </p>
+
+    <picture>
+        <source media="(max-width: 800px)" srcset="imagens/paisagem-p.png" type="image/png">
+        <source media="(max-width: 1250px" srcset="imagens/paisagem-m.png" type="image/png">
+        <img src="imagens/paisagem-g.png" alt="no-topo-da-serra">
+    </picture>
+</body>
+</html>
