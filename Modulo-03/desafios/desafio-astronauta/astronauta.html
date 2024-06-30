@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Astronauta</title>
+
+    <style>
+        body {
+            position: relative;
+            height: 90vh;
+            background: gray url('imagens/espaco.jpg') top center fixed;
+            background-size: cover;
+        }
+
+        #contained {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background-image: url('imagens/astronauta.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+<body>
+    <div id="contained"></div>
+</body>
+</html>
