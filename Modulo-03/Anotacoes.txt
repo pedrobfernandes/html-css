@@ -1,0 +1,166 @@
+TABELAS:
+
+
+    - HIERARQUIA DE TABELAS (simples):
+
+        - TABLE
+            - TABLE ROW (tr)
+                - TABLE HEADER (th)
+                - TABLE DATA (td)
+
+    - Se usarmos a propriedade de border na tabela: table { border: .. .. ..},
+    a borda fica á volta da tabela, ou seja, na parte de fora.
+    Para fazer borda corretamente, fazemos a borda no td (table data):
+    td {border: .. .. ..}
+
+    Se colocarmos em tr (table row), fica sem borda então esquece...!!
+
+    Em table, <table> podemos colocar a propriedade: border-collapse: ..;
+    Valores: padrão é separate, que as linhas ficam separadas (e feiosas!!)
+    podemos colocar collapse, que assim ficam juntas e mais bonitinho!!
+
+    As tags td e tr têm o fechamento opcional, ou seja, podemos ou não usar </td> e </tr>
+
+    Se a hierarquia não for obedecida (se não colocarmos as coisas na ordem certa), os dados aparecem ou antes ou depois da tabela
+
+    Se tivermos uma tabela com tres linhas e cada uma linha com tres colunas (celulas com dados),
+    podemos adicionar linhas com apenas uma coluna ou duas sem problemas.
+
+    Podemos alinhar os dados horizontalmente com o tetx-align (left rigth center..)
+    e podmeos alinhar verticalmente com o vertical-align (top bottom middle)
+
+
+    ---------------------------------------------------------------------------------------
+
+    - ANATOMIA PARA TABELAS GRANDES:
+
+        -TABLE
+            -CAPTION (Titulo ou Legenda)
+            -THEAD  (Cabeça) - Opcional
+                - TR
+                    -TD, TH
+            -TBODY  (Corpo)
+                - TR
+                    -TD, TH
+            -TFOOT  - (Pé) - Opcional
+                - TR
+                -   TD, TH
+
+
+        - Como esta estrututa é semantica, podemos fazer coisas como colocar
+        o TFOOT logo depois do THEAD (ao invéz de no final da tabela), que na tela
+        aparece normal no final da tabela. O Caption a mesma coisa, podemos colocar no fim da tabela que aparece no inicio..
+
+
+
+    - ESCOPO:
+
+        O escopo é aplicado ao th apenas, e diz onde estão os dados referentes
+        a esse th (qual o escopo do th em questão).
+
+        Usamos assim: <th scope="valor">
+
+        Temos os escopos: col, row, colgroup (grupo de colunas) e rowgroup (grupo de linhas)
+
+
+    - EFEITO ZEBRADO:
+
+        - É basicamente em uma tabela grande, colocar diferentes linhas com diferentes cores: Por exemplo, as linhas impares com fundo branco
+        e linhas pares com fundo cinza, para facilitar a leitura e distinção das linhas etc..
+
+        Para fazer isso, podemos no css usar algo como:
+
+            -tbody > tr:nth-child(even) {
+                background-color: gray; > coloca as linhas pares em cinza
+            }
+
+            - podemos colocar o que quisermos, podemos colocar as pares cinza e as impares roxo etc kk!
+
+            - podemos colocar even ou odd e
+            - podemos colocar 2n (de duas em duas ) 3n (tres em tres) whatever..!!
+
+
+    - CABECALHO FIXO PARA AS TABELAS GRANDES:
+
+        - Temos que por a tabela (<table>) com position: relative
+        - Depois colocamos o th do thead (thead > tr > th), com estas propriedades:
+            - position: sticky;
+            - top: 0; (ou -1px para não aparecer nada por tras dele e ficar grudado mesmo no topo)
+            - background-color: a mesma de thead; Senão quando rolar fica o cabelhalho mas so mostra o texto (os titulos e fica feioso kk!!)
+
+
+    - MESCLAGEM DE CELULAS:
+
+        -É quando temos que facer uma celula ocupar mais que uma linha ou mais
+        que uma coluna.
+        Para linha: rowspan="numero de linhas"
+        Para coluna: colspan="numero de colunas"
+
+
+    - AGRUPAR COLUNAS:
+
+        - Se quisermos estilizar uma ou várias colunas ao invés de linhas
+        podemos usar a tag <colgroup></colgroup>:
+
+        Por exemplo, digamos que a tabela tem 4 colunas:
+
+        <table>
+            <colgroup>
+                <col class="cnome">
+                <col class="csexo">
+                <col class="cidade">
+                <col class="cprof">
+            </colgroup>
+            <caption>Cadastro</caption>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Profissão</th>
+            </tr>
+            <tr>
+                <td>Ana Maria</td>
+                <td>F</td>
+                <td>25</td>
+                <td>Jornalista</td>
+            </tr>
+            <tr>
+                <td>Claudio</td>
+                <td>M</td>
+                <td>28</td>
+                <td>Programador</td>
+            </tr>
+            <tr>
+                <td>Gustavo</td>
+                <td>M</td>
+                <td>42</td>
+                <td>Professorr</td>
+            </tr>
+        </table
+
+        Os <col> dentro de colgroup, representam cada uma das colunas.
+        Agora, no css podemos usar a classe de cada um para estilizar a coluna
+        pertencente.
+
+        Se ao inves de 4 <col> usarmos por exemplo tres, e por exemplo no segundo,
+        colocarmos assim <col class="csexo" span="2">, depois quando estilizarmos
+        o ,csexo no css a esilização fica com efeito nessa coluna e na proxima coluna.
+
+
+
+    - TABELA RESPONSIVA:
+
+        - Quando temos uma tabela muito grande, em largura, se a tela for pequena,
+        vai ter muita rolagem horizontal na página, e tanto a tabela como o resto do texto
+        da página vai rolar.
+        Podemos resolver isso, fazendo com que apenas a tabela role e o resto da pagina fique normal.
+
+        - Primeiro colocamos a tabela inteira dentro de uma <div>
+        - Depois no css colocamos algo assim:
+
+        Presumindo que demos um id de container para a div
+        - div#conteiner {
+            overflow-x: auto;
+        }
+
+        A partir de agora apenas a tabela vai ter rolagem, mas o restante do conteudo da página não. 

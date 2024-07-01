@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabelas</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            position: relative;
+            width: 500px;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
+        }
+
+        thead, tfoot {
+            background-color: #383838;
+            color: white;
+        }
+
+        thead > tr > th {
+            position: sticky;
+            top: -1px;
+            background-color: #383838;
+        }
+
+        tbody > tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        td.num {
+            text-align: right;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Uso de Tabelas Grandes</h1>
+
+    <table>
+        <caption>População das Unidades Federativas</caption>
+        <thead>
+            <tr>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">População</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th scope="row">Total de Habitantes</th>
+                <td class="num"><strong>203.077.849</strong></td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>São Paulo</td>
+                <td class="num">44.411.238</td>
+            </tr>
+            <tr>
+                <td>Minas Gerais</td>
+                <td class="num">20.538.178</td>
+            </tr>
+            <tr>
+                <td>Rio de Janeiro</td>
+                <td class="num">16.054.524</td>
+            </tr>
+            <tr>
+                <td>Bahia</td>
+                <td class="num">14.141.626</td>
+            </tr>
+            <tr>
+                <td>Paraná</td>
+                <td class="num">11.444.380</td>
+            </tr>
+            <tr>
+                <td>Rio Grande do Sul</td>
+                <td class="num">10.882.965</td>
+            </tr>
+            <tr>
+                <td>Pernambuco</td>
+                <td class="num">9.058.931</td>
+            </tr>
+            <tr>
+                <td>Ceará</td>
+                <td class="num">8.794.957</td>
+            </tr>
+            <tr>
+                <td>Pará</td>
+                <td class="num">8.121.025</td>
+            </tr>
+            <tr>
+                <td>Santa Catarina</td>
+                <td class="num">7.610.361</td>
+            </tr>
+            <tr>
+                <td>Goiás</td>
+                <td class="num">7.056.495</td>
+            </tr>
+            <tr>
+                <td>Maranhão</td>
+                <td class="num">6.775.805</td>
+            </tr>
+            <tr>
+                <td>Paraíba</td>
+                <td class="num">3.974.687</td>
+            </tr>
+            <tr>
+                <td>Amazonas</td>
+                <td class="num">3.941.613</td>
+            </tr>
+            <tr>
+                <td>Espirito Santo</td>
+                <td class="num">3.833.712</td>
+            </tr>
+            <tr>
+                <td>Mato Grosso</td>
+                <td class="num">3.658.649</td>
+            </tr>
+            <tr>
+                <td>Rio Grande do Norte</td>
+                <td class="num">3.302.729</td>
+            </tr>
+            <tr>
+                <td>Piauí</td>
+                <td class="num">3.271.199</td>
+            </tr>
+            <tr>
+                <td>Alagoas</td>
+                <td class="num">3.127.683</td>
+            </tr>
+            <tr>
+                <td>Distrito Federal</td>
+                <td class="num">2.817.381</td>
+            </tr>
+            <tr>
+                <td>Mato Grosso do Sul</td>
+                <td class="num">2.757.013</td>
+            </tr>
+            <tr>
+                <td>Sergipe</td>
+                <td class="num">2.209.558</td>
+            </tr>
+            <tr>
+                <td>Rondônia</td>
+                <td class="num">1.581.196</td>
+            </tr>
+            <tr>
+                <td>Tocantins</td>
+                <td class="num">1.511.460</td>
+            </tr>
+            <tr>
+                <td>Acre</td>
+                <td class="num">830.018</td>
+            </tr>
+            <tr>
+                <td>Amapá</td>
+                <td class="num">733.759</td>
+            </tr>
+            <tr>
+                <td>Roraima</td>
+                <td class="num">636.707</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultricies sagittis orci, nec consequat dolor consequat ac. Nulla eleifend rutrum semper. Sed fringilla, ligula eu gravida tempor, quam magna blandit dolor, quis imperdiet sapien erat eu nibh. Nunc rutrum pulvinar nulla in facilisis. Quisque feugiat purus in leo condimentum non congue eros consectetur. Praesent dictum consequat nulla, bibendum rhoncus enim adipiscing et. Pellentesque mi tellus, ornare id mattis ac, sollicitudin a erat. Maecenas sit amet vehicula odio.
+    </p>
+    <p>
+        Donec felis velit, placerat at vulputate a, iaculis vitae nisl. In a tellus at ligula tempor auctor. Nam in mi urna, ac fermentum sapien. Integer sed condimentum neque. Sed ut est ligula. Duis ullamcorper libero nec odio euismod in pellentesque libero sagittis. Nunc aliquet sodales sem a rutrum. Mauris bibendum, nunc quis interdum feugiat, massa odio hendrerit metus, eget tempor turpis justo quis mauris. Praesent volutpat gravida dolor, vitae ultrices neque egestas nec. Aenean quis sapien tortor. Sed quis sem mollis dui aliquet consequat. Quisque condimentum tempus rutrum. Ut at est ac odio fermentum posuere at sed leo. In dignissim neque sit amet turpis molestie vitae porttitor enim malesuada.</p>
+    <p>
+        Ut nec diam sapien. In augue elit, ultrices at mollis non, consectetur vel ante. Vivamus pellentesque rhoncus porta. Phasellus ultrices mi sit amet diam sollicitudin faucibus. Morbi eget sapien et massa dictum condimentum. Sed feugiat pellentesque velit, vel sollicitudin urna commodo eget. Sed ut urna augue, at sollicitudin risus. Nam tincidunt imperdiet tortor at auctor. Aenean odio elit, tristique ut suscipit id, lobortis tincidunt sem. Morbi eget justo ut ante mattis mattis. Nam consequat tincidunt interdum. Proin interdum urna quis nibh vulputate pellentesque. Sed nisl eros, tempor vitae luctus nec, commodo iaculis orci. Quisque ultrices feugiat lacus id tristique. Sed molestie suscipit dui, at luctus nibh rhoncus sit amet.
+    </p>
+    <p>
+        Maecenas ac enim arcu, eget faucibus erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida, purus ut accumsan pulvinar, erat nunc ultrices ante, id adipiscing nunc metus vel quam. Integer lobortis consectetur pellentesque. Maecenas ac porttitor diam. Donec ante eros, rutrum non sagittis ullamcorper, semper et ipsum. Sed neque velit, mattis ac mattis nec, eleifend vitae sapien. Nam at tortor ut tellus accumsan placerat. Curabitur commodo facilisis volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus rhoncus lacinia nulla nec imperdiet. Phasellus consectetur placerat lacus nec tempus. Sed vitae mi velit. Nunc scelerisque placerat orci id tempus. Etiam fermentum posuere magna vel semper. Vestibulum non nisi et arcu malesuada tristique.
+    </p>
+    <p>
+        Suspendisse eu mi a diam volutpat placerat nec id justo. Nulla vitae risus ante. Sed sed diam tellus, in suscipit felis. Quisque non dui mi, quis mattis ligula. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur vel viverra nunc. Aliquam ipsum libero, vulputate eget bibendum quis, adipiscing at erat. Integer sit amet arcu vel est suscipit gravida et vulputate tortor. Aliquam tincidunt leo nec dui facilisis iaculis. Suspendisse et dolor mi, at sodales dui. Nunc consectetur nulla at enim interdum auctor. Nunc varius pretium risus. Integer varius, erat sit amet hendrerit egestas, mi elit facilisis ligula, a ultrices justo elit id dui. Pellentesque interdum aliquet nisi, eu iaculis ipsum dignissim eget. In in nisl sed eros luctus pellentesque.</p>
+    <p>
+        Cras augue enim, pellentesque ut posuere luctus, posuere sed ipsum. Nullam lacus tortor, sodales eu congue lobortis, auctor quis mauris. Curabitur feugiat placerat lacus, quis ultrices sem venenatis sed. Suspendisse lacinia lacus nec velit faucibus id dapibus erat pellentesque. Sed at augue nec eros scelerisque condimentum. Aenean vulputate, mi et placerat suscipit, eros urna consequat massa, quis lacinia nisl orci vel massa. Nam sit amet metus et magna adipiscing dignissim vitae in nibh. Etiam tempus sagittis gravida. Nam mattis ultricies lectus, ac adipiscing lorem malesuada at. In iaculis eleifend magna quis volutpat. Aliquam ligula eros, aliquet id eleifend auctor, dignissim quis lacus. Pellentesque non fringilla leo. Etiam nec nibh nec augue egestas commodo sed condimentum metus. Nulla elementum suscipit adipiscing.
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultricies sagittis orci, nec consequat dolor consequat ac. Nulla eleifend rutrum semper. Sed fringilla, ligula eu gravida tempor, quam magna blandit dolor, quis imperdiet sapien erat eu nibh. Nunc rutrum pulvinar nulla in facilisis. Quisque feugiat purus in leo condimentum non congue eros consectetur. Praesent dictum consequat nulla, bibendum rhoncus enim adipiscing et. Pellentesque mi tellus, ornare id mattis ac, sollicitudin a erat. Maecenas sit amet vehicula odio.
+    </p>
+    <p>
+        Donec felis velit, placerat at vulputate a, iaculis vitae nisl. In a tellus at ligula tempor auctor. Nam in mi urna, ac fermentum sapien. Integer sed condimentum neque. Sed ut est ligula. Duis ullamcorper libero nec odio euismod in pellentesque libero sagittis. Nunc aliquet sodales sem a rutrum. Mauris bibendum, nunc quis interdum feugiat, massa odio hendrerit metus, eget tempor turpis justo quis mauris. Praesent volutpat gravida dolor, vitae ultrices neque egestas nec. Aenean quis sapien tortor. Sed quis sem mollis dui aliquet consequat. Quisque condimentum tempus rutrum. Ut at est ac odio fermentum posuere at sed leo. In dignissim neque sit amet turpis molestie vitae porttitor enim malesuada.</p>
+    <p>
+        Ut nec diam sapien. In augue elit, ultrices at mollis non, consectetur vel ante. Vivamus pellentesque rhoncus porta. Phasellus ultrices mi sit amet diam sollicitudin faucibus. Morbi eget sapien et massa dictum condimentum. Sed feugiat pellentesque velit, vel sollicitudin urna commodo eget. Sed ut urna augue, at sollicitudin risus. Nam tincidunt imperdiet tortor at auctor. Aenean odio elit, tristique ut suscipit id, lobortis tincidunt sem. Morbi eget justo ut ante mattis mattis. Nam consequat tincidunt interdum. Proin interdum urna quis nibh vulputate pellentesque. Sed nisl eros, tempor vitae luctus nec, commodo iaculis orci. Quisque ultrices feugiat lacus id tristique. Sed molestie suscipit dui, at luctus nibh rhoncus sit amet.
+    </p>
+    <p>
+        Maecenas ac enim arcu, eget faucibus erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida, purus ut accumsan pulvinar, erat nunc ultrices ante, id adipiscing nunc metus vel quam. Integer lobortis consectetur pellentesque. Maecenas ac porttitor diam. Donec ante eros, rutrum non sagittis ullamcorper, semper et ipsum. Sed neque velit, mattis ac mattis nec, eleifend vitae sapien. Nam at tortor ut tellus accumsan placerat. Curabitur commodo facilisis volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus rhoncus lacinia nulla nec imperdiet. Phasellus consectetur placerat lacus nec tempus. Sed vitae mi velit. Nunc scelerisque placerat orci id tempus. Etiam fermentum posuere magna vel semper. Vestibulum non nisi et arcu malesuada tristique.
+    </p>
+    <p>
+        Suspendisse eu mi a diam volutpat placerat nec id justo. Nulla vitae risus ante. Sed sed diam tellus, in suscipit felis. Quisque non dui mi, quis mattis ligula. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur vel viverra nunc. Aliquam ipsum libero, vulputate eget bibendum quis, adipiscing at erat. Integer sit amet arcu vel est suscipit gravida et vulputate tortor. Aliquam tincidunt leo nec dui facilisis iaculis. Suspendisse et dolor mi, at sodales dui. Nunc consectetur nulla at enim interdum auctor. Nunc varius pretium risus. Integer varius, erat sit amet hendrerit egestas, mi elit facilisis ligula, a ultrices justo elit id dui. Pellentesque interdum aliquet nisi, eu iaculis ipsum dignissim eget. In in nisl sed eros luctus pellentesque.</p>
+    <p>
+        Cras augue enim, pellentesque ut posuere luctus, posuere sed ipsum. Nullam lacus tortor, sodales eu congue lobortis, auctor quis mauris. Curabitur feugiat placerat lacus, quis ultrices sem venenatis sed. Suspendisse lacinia lacus nec velit faucibus id dapibus erat pellentesque. Sed at augue nec eros scelerisque condimentum. Aenean vulputate, mi et placerat suscipit, eros urna consequat massa, quis lacinia nisl orci vel massa. Nam sit amet metus et magna adipiscing dignissim vitae in nibh. Etiam tempus sagittis gravida. Nam mattis ultricies lectus, ac adipiscing lorem malesuada at. In iaculis eleifend magna quis volutpat. Aliquam ligula eros, aliquet id eleifend auctor, dignissim quis lacus. Pellentesque non fringilla leo. Etiam nec nibh nec augue egestas commodo sed condimentum metus. Nulla elementum suscipit adipiscing.
+    </p>
+
+    
+</body>
+</html>
