@@ -1,0 +1,96 @@
+- IFRAME (inline frame ou quadro em linha)
+
+    - O iframe serve para criar uma janela (como se fosse uma nova aba) ou uma
+    nova instancia do navegador, mas dentro da nossa página.
+
+    Por exemplo, se tivermos este html:
+
+        h1>Testando o uso de um iframe</h1>
+        <p>
+            Acessando o site do
+    
+            <iframe src="https://www.cursoemvideo.com" frameborder="0"></iframe>
+            
+            para aprender a programar.
+        </p>
+
+        Na página aparece a janela depois do Acessando o site do, com o site do
+        cursoemvideo
+
+
+    - Tem alguns sites que têm proteções contra o uso de iframes em sites de terceiros.
+
+    - Nem todos os dispositivos moveis (celulares etc) tem suporte para iframe, então,
+    tudo o que colocarmos entre a abertura <iframe> e o fechamento </iframe>, vai funcionar
+    como conteúdo alternativo para essses casos.
+
+    Por exemplo: se o celular não soporta iframe, podemos fazer assim:
+
+        <iframe ....>
+            <a href="https://blablablabla.com" etc etc>
+        </iframe>
+
+        Assim se o dispositivo não for compativel com iframe, mostra o link
+
+
+    - ALTURA E LARGURA DO iframe:
+
+        - Por padrão é de 300 x 150
+        - podemos alterar dento da tag mesmo: heigth="valor" width="valor"
+        - Podemos tambem configurar a altura e largura usando css ao invez de usar a tag
+        - Se tiver configuração nos dois (na tag iframe e no css), o css ganha.
+        - Se não tiver nem configuração na tag nem na css, o iframe usa os valores
+        padrão de 300 x 150
+
+
+    - ROLAGEM NO iframe (quando ele é grande para permitir rolagem):
+
+        - parametro scrolling: tem os valores:
+        - auto (o padrão)
+        - yes
+        - no - Supostamente, ao usar no, o navegador não deixa fazer a rolagem
+        Mas na realidade depende do navegador. O google-chrome deixa rolar na mesma.
+
+    -FRAMEBOARDER
+
+        - Diz se aparece a borda ou não. Valores: "0" tira a borda, qualquer outo valor coloca a borda.
+        - A borda pode ser personalizada no css.
+
+    - Podemos carregar páginas internas nossas no iframe ao invés
+    de páginas externas. Apenas basta colocar o caminho da página
+    em src=""
+
+    - Podemos também abrir paginas internas mas sem especificar no iframe
+    o nome/caminho da pagina no src="". Assim:
+
+    - Criamos o iframe: <iframe></iframe>, e em src, podemos colocar uma pagina ou deixar vazio: src="", mas colocamos
+    uma propriedade name: name="frame" por exemplo.
+    - depois podemos ter algures na pagina um link (ancora): <a>, e em hrer="",
+    colocamos o caminho da pagina, e depois em target="" ao invez de colocar _blank,
+    _self etc, colocamos o valor que demos á propriedade name="" do iframe, no caso ficaria
+    target="frame"
+
+    - Quando a pagina onde estamos usando iframe abre, se não colocamos nada em src, o iframe inicia vazio. Podemos colocar
+    em src="" o caminho de uma página interna, ou podemos ate criar um arquivo especificamente para ser usado como primeiro conteudo do iframe antes de o usuario apertar nos links, ou podemos usar a
+    propriedade srcdoc="", que nos deixa criar html inline, onde podemos colocar por exemplo h1 com titulo, paragrafos incluindo
+    imagens.
+    Isso permite colocar algum conteudo temporário para quando a pagina acaba de carregar e antes do usuario dar um clique em um link
+
+    Para colocar imagem , ficaria algo assim:
+
+        - srcdoc="<p></p> etc.. <img src='caminho da imagem'>"
+
+        - Como o srcdoc="", já tem aspas duplas, em img src colocamos aspas simples ok!!
+
+
+    - Para bloquear possiveis açoes maliciosas vindas de outros sites que colocamos no iframe, ou seja, impedir que esses sites manipulem ou façam algo malicioso no nosso site, podemos
+    colocar o atributo sandbox="sandbox" dentro da tag <iframe>
+    No valor podemos colocar sandbox="sandbox" ou apenas sandbox="", vazio, que faz o mesmo, bloqueia tudo.
+
+    Para alem de bloquear tudo, com sandbox="sandbox" ou sandbox="", podemos permitir algumas coisas especificas, por exemplo, ao inves de bloquear tudo, usando sandbox="sandbox", podemos usar por exemplo
+    sandbox="allow-same-origin allow-forms allow-scripts", podemos usar um "allow" ou mais separados por espaços
+    especificando o que vamos permitir. Aqui, neste exemplo, estamos permitindo conteudo da mesma origem, formularios e scripts. Tudo o resto é bloqueado.
+
+    - Outra medida de segurança que podemos colocar é o atributo
+    referrerpolicy="no-referrer", que diz que o conteudo dentro do
+    iframe, ou seja a pagina que colocamos no iframe, não vai coletar nada do usuário. O padrão do referrerpolicy é no-referrer-when-downgrade, mas o no-referrer é mais seguro e mais estrito.
