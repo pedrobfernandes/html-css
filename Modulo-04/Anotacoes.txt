@@ -110,7 +110,7 @@
 
     - Todo o formulário tem que estar entre as tags <form> e </form>
     - toda a caixa de texto (input type="text") tem que ter o atributo name="" e id=""
-    - Para criar um butão de enviar (ou submeter), usamos o input type="submit". Precisamos colocar também o atributo value. Por exemplo: value="Enviar", mostra
+    - Para criar um botão de enviar (ou submeter), usamos o input type="submit". Precisamos colocar também o atributo value. Por exemplo: value="Enviar", mostra
     no botão a palavra Enviar.
 
     Para pedir uma palavra-passe usamos o type password no <input>, que quando o usuario digita a palavra passe, mostra bolinha ou asterisco ao invéz da palavra-passe
@@ -124,7 +124,7 @@
     minlength="5" maxlength="15"
 
     Podemos também mudar o tamanho da caixa (do input), assim, dentro da tag <input>:
-    size="10". Aqui, diz que a caixa vai mostrar 10 letras. O size não limita a quantidade de caracteres, apenas limita quantos caracteres ele mostra por vez. Ou seja, se temos o tamanho 10, mas o maxlength for 30, a caixa ermite inserir 30 caracteres, mas só mostra 10 deles por vez e cria uma rolagem lateral
+    size="10". Aqui, diz que a caixa vai mostrar 10 letras. O size não limita a quantidade de caracteres, apenas limita quantos caracteres ele mostra por vez. Ou seja, se temos o tamanho 10, mas o maxlength for 30, a caixa permite inserir 30 caracteres, mas só mostra 10 deles por vez e cria uma rolagem lateral
 
     Também podemos colocar um texto padrão (ou dica) na caixa, por exemplo, Nome do Usuário. Usamos, dentro do <input> placeholder="Nome do usuário"
 
@@ -162,8 +162,11 @@
         </form>
 
         Nota: Por padrão usa-se div e não <p>. usamos <p> apenas para simplificar.
+        Podemos também usar a tag fieldset para agrupar (ou envelopar) o conteudo de um formulário
+
+        Podemos também usar dentro de fieldset a tag ledgend para dar "um titulo" ao formulário
         
-        Aqui, estamos assossiando o label (nome , sobrenome), com um id
+        Aqui, estamos associando o label (nome , sobrenome), com um id
         Ou seja estamos relacionando o label ao seu elemento (ao seu controle).
         Exemplificando, estamos, aqui no exemplo, criando uma relação entre o label
         Nome: e a caixa de input na frente dele.
@@ -227,3 +230,159 @@
         autocomplete="palavra-chave". Por exemplo, no exemplo acima, usamos
         autocomplete="username" -> que diz que a caixa é de nome de usuario
         autocomplete="current-password" -> que diz que a caixa é para a senha atual
+
+
+    - MAIS CONTROLES E ATRIBUTOS DE FORMULARIOS:
+
+        - type="number" -> permite apenas números. step="" determina o salto (1 em 1 2 em 2 etc) se quisermos colocar numeros com decimais (5.5 etc) colocamos o step
+        como por exemplo: step="0.5" ou step="0.2" "0.1" etc.
+
+        -type="month" -> coloca um calendário (dependendo do navegador) para escolher o mes e dia - permite também digitar ao invez de usar o calendário
+
+        - type="date" -> coloca um calendário (dependendo do navegador) para escolher uma data (dia-mes-ano) - permite também digitar ao invez de usar o calendario
+
+        - type="time" -> idem.. coloca um relogio para escolher a hora - pode digitar ao invez de usar o relogio
+
+        - type="email" -> caixa de texto para colocal email. Faz uma validação simples apenas (verifica se o @ está no email)
+
+        - type="tel" -> uma caixa para digitar numero de telefone (não faz validção), temos que usar expressões regulares (alias para email só mesmo com expressões regulares tambem...)
+
+        - type="checkebox" -> cria um checkox, uma caixinha de marcação.
+        - type="radio" -> cria um radiobutton
+        - Para o radiobutton, para permitir que apenas um seja selecionado, temos que colocar o mesmo valor para name="" para todos os radiobuttons
+
+        - type="color" -> mostra um "botão" onde clicamos e tem uma "paleta" de cores com opções de rgb hsl hex etc. independente do esquma (rgb hex etc),
+         quando clica para envar ou selecionar, usando o metodo get (provavelmente o post faz o mesmo), ele manda em hexadecimal. Na url ele substitui o "#" por "%"
+         Por padrão a cor inicial é preto. Podemos colocar outra cor inicial usando o value="#hexa" colocando a cor em hexadecimal: value="#00FF00" (verde)
+
+         - type="range"
+
+         - type="file" -> mostra um file chooser. Para enviar arquivos usamos o metodo POST
+
+        - atributo required -> diz que o campo é obrigatorio
+        - pattern="regex" -> onde colocamos uma expressão regular
+        - value="valor" -> permite colocar um valor em um input do tipo submeter (por exemplo: value="submit") -> o botão aparece com o texto submit.
+        Permie colocar um valor inicial em uma caixa, por exemplo uma caixa para digitar um digito de 1 a 10, podemos usar value="5" para se não colocar nada
+        ficar com 5 na caixa.
+
+        - min e max -> especifica o valor minimo e máximo. Exemplo: <input type="number" min="0" max="10">
+        Aqui, é um input para numeros onde o valor minimo é 0 e o maximo é 10
+
+        - checked -> no checkbox e radiobutton, permite fazer com que fique marcado por padrão. Depois o usuario pode marcar outros e deselecionar este check ou radiobutton
+
+
+    - SELECT:
+
+        - O select mostra um "drop-down" menu, onde podemos escolher a opção. É aquueles que aparecem nos sites quando a gente escolhe por exemplo o idioma
+        Exemplo de select:
+
+
+        <form method="get" action="cadastro.php" autocomplete="on">
+            <div>
+                <label for="iest">Estado:</label>
+                <select name="estado" id="iest">
+    
+                    <option value="" selected>--- Escolha ---</option>
+                    <optgroup label="Região Sudeste">
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="MG">Mina Gerais</option>
+                    </optgroup>
+    
+                    <optgroup label="Região Nordeste">
+                        <option value="PE">Pernambuco</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="MA">Maranhão</option>
+                    </optgroup>
+                </select>
+            </div>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </form>
+
+
+        - option - são as opções dentro do drop-down
+        - selected ou selected="selected" marca o elemento já como o padrão (antes de selecionarmos algo, já esta selecionado)
+        - o que está em value="" é o que é enviado quando apertamos enviar
+        - optgroup, permite agrupar umas quantas opções, como no exemplo, onde agrupamos as opções entre Região Sudeste e Região Nordeste
+        - o label em optgroup, não é o mesmo (não faz e não tem o mesmo proposito) que o <label for="...">
+        - <option value="" selected>--- Escolha ---</option> -> isto é algo comum de se ver em sites, onde ao invéz de estar alga ja selecionado mostra essa mensagem de Escolha
+
+
+    - DATALIST:
+
+        - O select não nos deixa escrever, apenas podemos selecionar, ou seja, se o valor que queremos escolher não consta na lista então não tem o que fazer.
+        - Podemos ao invez de usar o select, usar um datalist (<datalist></datalist>).
+        - Assim:
+
+            <label for="iprof">Profissão:</label>
+            <input type="text" name="prof"id="iprof" list="lstprof">
+            <datalist id="lstprof">
+                <option value="ADM">Administrador</option>
+                <option value="CONT">Contabilista</option>
+                <option value="DEV">Desenvolvedor</option>
+                <option value="PROF">Professor</option>
+            </datalist>
+
+        - Aqui, temos um imput para escrever, e temos um datalist, com as opções de profissão.
+        - Na tela, vai aparecer a caixa de texto do input, mas quando clicamos nela, mostra uma setinha para baixo, e se clicarmos nela, temos uma lista tal como no select
+        - A diferença  é que agora, se por exemplo a nossa profissão não estiver na lista, nos podemos escrever-la manualmente.
+
+        - No datalist, podemos ter como está no exemplo, usando value="ADM", etc, e se fizermos assim, ao escolhermos adininstrador por exemplo, o que é enviado é ADM.
+        - Podemos tambem não colocar o value, e assim fica na lista apenas Administrador, Professor etc.
+
+        - Também, no datalist, quando digitamos uma letra, se essa letra faz parte de uma opção ele mostra ja a sugestão. Por exemplo, se digitar P o datalist já sugere Professor.
+
+        - Também, se colocarmos por exemplo, Cozinheiro, que não consta na lista, depois de enviar, se voltarmos á pagina, a lista tem Cozinheiro lá dentro, que nos adicionamos.
+
+
+    - TEXTAREA:
+
+        - mostra uma caixa onde podemos escrever. Escrever texto mesmo, pequeno ou longo
+        - Por exemplo, os sites usam para enviarmos mensagens pedindo ajuda em algo, expondo algum problema etc etc:
+
+        - <textarea name="msg" rows="10" cols="30" id="imsg"></textarea>
+
+        - As linhas (rows) e colunas (cols), não é o máximo de linhas e colunas que
+        podemos escrever, é apenas a quantidade de linhas e colunas visiveis na tela.
+
+        - O ideal ao usar textarea é usar o metodo Post no formulário, porque
+        o post não tem a limitação de 3000 bytes maximo
+
+
+    - OUTPUT:
+
+        - a tag <output></output> permite mostrar resultado de uma operação no formulário.
+        Podemos usar código em javascript para isso. Um exemplo de uso do output:
+
+        <div>
+            <label for="in1">Número 1:</label>
+            <input type="number" name="n1"id="in1" min="0" max="50" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)">
+        </div>
+        <div>
+            <label for="in2">Número 2:</label>
+            <input type="number" name="n2"id="in2" min="0" max="50" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)">
+        </div>
+        <div>
+            <label for="isoma">Soma:</label>
+            <output name="soma" id="isoma">0</output>
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </div>
+
+        - Aqui, usamos o atributo oninput="" nas tags de input, para colocar as espressões:
+        "isoma.innerHTML = Number(in1.value) + Number(in2.value)"
+
+        Isto faz com que quando colocarmos números em n1 e em n2 apareça em Soma a soma dos dois.
+        Mas quando enviamos (clicamos enviar), a soma não é enviada. O que é enviado é n1=4&n2=7, ou seja
+        os numeros que colocamos.
+        Ou seja, o output, não serve para enviar dados, apenas para calcular e mostrar na tela.
+
+        - Também podemos usar o output, para refletir o valor atual, por exemplo de um input type=range. Assim:
+
+            -<input type="range" name="num"id="inum" min="0" max="10" value="5" oninput="ival.innerHTML = Number(inum.value)">
+            <output id="ival">5</output>
+
+            - Aqui, cada vez que mexermos o "slider", o valor atual vai ser mostrado na tela
