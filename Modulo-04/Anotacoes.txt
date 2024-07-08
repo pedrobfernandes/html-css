@@ -386,3 +386,67 @@
             <output id="ival">5</output>
 
             - Aqui, cada vez que mexermos o "slider", o valor atual vai ser mostrado na tela
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    - MEDIA QUERIES -> media type + media features:
+
+
+        - Media Query, é basicamente fazer a adaptação do conteudo da página para os vários tamanhos de telas (tv monitores tablet celulares etc),
+        fazendo com que o conteúdo se adapte independentemente do tamanho da tela onde estamos vendo a página. Ao usar as media queries, o nosso site
+        pode ser modificado consoante o tamanho da tela, como por exemplo, uma seção de links que estava a descoberto em uma tela grande, transforma-se
+        em um menu de "hamburger", quando a tela onde estamos vendo o site é uma de celular e os links ficam dentro desse menu. Outro exemplo, os videos do youtube
+        por exemplo, em tela cheia e grande aparecem 4 videos lado a lado, mas se usarmos o youtube em tablet ou celular, já aparece apenas dois lado a lado ou dependendo
+        do tamanho da tela até mesmo apenas um por linha. Mais um exemplo, uma página que vamos imprimir (com CTRL-P) no navegador, muda a fonte usada para uma fonte
+        mais apropriada para impressão, e pode remover da pagina (do artigo) links e conteúdo que não fazem sentido estarem em uma folha de papel.
+
+
+        - Para começar a trabalhar com media queries, fazemo-lo usando css, o html não tem nada a ver com media query. Para definirmos a folha de estilos para
+        a/as media query, na secção <head> do nosso html, usamos a seguinte tag <link>:
+
+            - <link rel="stylesheet" href="estilos/tela.css" media="screen">
+
+            - A palavra chave aqui é media="". é isto que diz que a folha de estilos vai tratar de media query.
+            - Isto são os media types.
+            - O valor pode ser um de: screen, que diz que se vai referir apenas á tela, print para impressora ou all que se refere todos os dispositivos
+
+
+        - MEDIA FEATURES:
+
+            - media features são as caracteristicas da media. Em conjunto com media types tornam a página adaptavel a vários ou todos os tipos de tela.
+
+            - media fieatures são especificadas assim no html:
+
+                <link rel="stylesheet" href="estilos/style.css" media="all">
+                <link rel="stylesheet" href="estilos/retrato.css" media="screen and (orientation:portrait)">
+                <link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation:landscape)">
+
+                - Aqui, temos a media type (screen) e a orientação (orientation:portrait) -> quando a ela está em modo retrato e
+                (orientation:landscape) -> quando está deitada. Ou seja, temos o mesmo media type (screen aqui, que diz que vamos dar os estilos para telas)
+                mas duas propriedades deiferentes de tela, de pé e deitada
+
+                - Com esta configuração, podemos colocar os estilos e configurações gerais (que se aplicam tanto a tela em pé quanto a tela deitada), na folha
+                de estilo style.css (media="all"), e depois as configurações e estilos especificos para de pe e deitada nas suas respetivas folhas.
+
+
+            - Para projetos mais simples, se quisermos podemos colocar tudo em uma so folha de estilo, ou até mesmo em estilos internos (na tag style do html).
+            - Fazemos assim:
+
+                /* Colocamos aqui as configurações gerais (no exemplo, as que estão em style.css (media="all"))
+                Podemos se quisermos especificar literalmente: @media all {
+                    
+                }*/
+                
+                @media screen and (orientation: portrait) {
+                    colocamos aqui as configurações para retrato
+                }
+
+                @media screen and (orientation: landscape) {
+                    colocamos aqui as configurações para paisagem
+                }
+
+                Se colocarmos tudo em uma folha de estilo separada (ou seja, todas as configurações em uma so folha), na declaração de link
+                <link stylesheet="" bla bla..> não precisa colocar media=".."
