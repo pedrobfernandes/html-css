@@ -450,3 +450,28 @@
 
                 Se colocarmos tudo em uma folha de estilo separada (ou seja, todas as configurações em uma so folha), na declaração de link
                 <link stylesheet="" bla bla..> não precisa colocar media=".."
+
+
+
+        - MOBILE FIRST:
+
+            - O mobile first é um "paradigma", que diz que devemos-nos preocupar primeiro em criar sites que fiquem bem (ou seja adaptados) primeiro aos dispositivos
+            moveis (celulares tablets), e então depois quando o site estiver ok, irmos adaptando aos outros dispositivos com telas maiores como televisores desktops
+            notebooks etc. A teoria por de trás disso é que ao invez de começarmos a remover elementos para o site "caber" em telas menores, aqui, podemos incluir elementos para melhor aproveitar as telas maiores, adicionando melhor experiencia de usuario, sem denegrirmos a experiencia para usuarios de depositivos
+            moveis.
+            O conceito de Mobile First foi elaborado por Luke Wroblewski em 2009 e 2010
+
+            - Algumas vantajens da abordagem do mobile first:
+
+                - Os sites terão no geral uma melhor performance, pois ao construir sites pensando em dispositivos menores primeiro, nos estamos pensando
+                em imagens menos pesadas, conexões moveis mais limitadas etc.
+
+                - Sites como o google, dão mais valor a sites que foram feitos pensando em mobile first.
+
+
+        - TYPICAL DEVICES BREAKPOINT:
+
+            - Quando tratamos de media queries, temos que "decidir" qual é o tamanho de uma tela de celular, uma tela de tablet, de televisão, o limite da tela do monitor ect.
+            Só que é um pouco complicado tratar de breakpoints, pois por exemplo tem TVs enormes, mas que têm uma resolução relativamente baixa. Assim como existe dispositivos com tela pequena mas com uma resolução altissima (ou seja muitos pixeis para deixar a imagem perfeitinha).
+            As telas de hoje (tamanhos e resoluções) amanha podem estar ultrapassadas, então quando se trata de breakpoints,
+            temos que estar sempre pesquisando os valores atuais.
