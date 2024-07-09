@@ -10,3 +10,16 @@ document.getElementById('burger').onclick = function()
         menu.style.display = 'block';
     }
 }
+
+document.body.onresize = function()
+{
+    let menu = document.getElementById('menu');
+    if (window.innerWidth >= 768)
+    {
+        menu.style.display = 'block'
+    }
+    else
+    {
+        menu.style.display = 'none';
+    }
+}

@@ -57,7 +57,7 @@ menu > ul > li > a:hover {
 }
 
 main {
-    width: 90vw;
+    max-width: 90vw;
     background-color: white;
     margin: auto;
     margin-top: 10px;
@@ -68,9 +68,9 @@ main > article > h2 {
     padding-bottom: 20px;
 }
 
+
 article > p {
     text-align: justify;
     margin-bottom: 20px;
     text-indent: 20px;
-    
 }
