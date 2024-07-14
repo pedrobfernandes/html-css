@@ -1,0 +1,279 @@
+FLEXBOX:
+
+    - CSS Flexible Box Module Level 1 (aff...)
+    - Surgiu em 2017
+    - Flexbox é uma técnica que permite que os elementos dentro de um container se adaptem ao tamanho do container. Flexbox permite criar caixas flexiveis.
+
+    - COMO FUNCIONA:
+
+        - Flexbox cria layouts flexiveis, onde os elementos dentro do container podem mudar de tamanho consoante o conteiner.
+        - Flexbox trabalha com caixas, como o display: block e outros. A diferença é que nós não definimos estritammente o tamanho  da caixa, nós apenas definimos um tamanho base, mas o conteudo da caixa e o container é que vão definir o tamanho  e o formato dela.
+
+        - Dentro desse container (dessa caixa flexivel), nós criamos elementos (outras caixas), e ao usarmos o flexbox, se alterarmos o tamanho e/ou formato do container,
+        o conteúdo dentro dele adapta-se a esse tamanho e formato. Quando usamos o display: block no container e display: inline-block nos elementos dentro do container, essa adaptação pode não acontecer ao mutar o tamanho e formato do container. Isso gera um transbordamento dos elementos dentro do container.
+        O flexbox resolve isso criando então containers e elementos adaptaveis.
+
+        - Para criar uma flexbox, nós damos ao container a propriedade: display: flex
+        - Esta propriedade não é dada a todos os elementos, apenas aos elementos que conteiners (que vão ter elementos dentro)
+
+        - Aos elementos dentro do container, se dermos a propriedade: flex: auto, isto faz
+        com que os elementos se auto adaptem 100% ao tamahho e formato do container tendo assim um design flexivel responsivo fluido e adaptavel
+
+        - Outra vantagem do flexbox, é que podemos trabalhar com layout horizontal, mas també com layout vertical onde as caixas ficam umas em cima das outras.
+
+
+    - FLEX-DIRECTION E EIXOS:
+
+        - Configurações de flex-direction:
+
+            - row (é o padrão, se não especificar fica esta), row é no sentido da esquerda para a direita nos paises cujos idiomas são assim, mas em paises onde se le da direita para a esquerda, o sentido do flex-direction: row é também da direita para a esquerda
+
+            - row-reverse - em linha na mesma, mas ao contrário do row, os elementos são colocados no sentido inverso. Se a direção é da esquerda para a direita, como se faz no Brasil, os elementos são colocados da direita para a esquerda.
+
+            - column (coluna) - layout vertical, onde temos a coluna e os elementos são dispostos verticalmente um abaixo do outro. Tal como no row, o fluxo normal é de cima para baixo, novamente dependendo do idioma, para nos é assim, mas para algum idioma onde a leitura seja inversa, então é de baixo para cima.
+
+            - column-reverse -> como o row-reverse mas em coluna kk
+
+
+        - Eixos:
+
+            - flex-direction: row -> O primeiro eixo que é criado é o eixo principal (main axis). Ele gera dois pontos, que são o main-start e main-end. Em row, o main-start é o inicio na esquerda e o main-end fica no final á direita.
+            Outro eixo que é criado é o eixo transversal (cross-axis), que gera dois pontos,
+            o cross-start (em row é o primeiro ponto na vertical) e o cross-end (o ultimo ponto na vertical)
+
+            - flex-direction: row-reverse -> o main-axis inverte (ou seja, vai da direita para a esquerda), assim como o main-start e main-end. O cross-axis não inverte.
+
+            - flex-direction: column -> o main-axis é de cima para baixo na vertical (no nosso idioma). O cross-axis vai na horizontal da esquerda para a direita
+
+            - flex-direction: column-reverse -> main-axis vai de baixo pra cima, e o cross-axis vai na horizontal da esquerda para a direita
+
+
+                                        flex-direction: row
+
+                main-start                                                   main-end
+            cs    ------------------------------------------------------> main-axis
+              |  -------------------------------------------------------------
+              |  |                                                           |
+              |  |                                                           |
+              |  |                                                           |
+              |  |------------------------------------------------------------
+              |
+             \/
+            ce  cross-axis
+
+
+
+                                        flex-direction: row-reverse
+
+                 main-axis
+                 main-end                                                  main-start
+                 <----------------------------------------------------------    cs
+                 ------------------------------------------------------------ |
+                 |                                                          | |
+                 |                                                          | |
+                 |                                                          | |
+                 |----------------------------------------------------------- |
+                                                                             \ /
+                                                                               ce   cross-axis
+
+
+                                           flex-direction: column
+
+                                       cs     cross-axis
+                               main-start ------------->  ce
+                                 |  --------------
+                                 |  |            |
+                                 |  |            |
+                       main axis |  |            |
+                                 |  |            |
+                                 |  |            |
+                                 |  |            |
+                                 |  |            |
+                                 |  |            |
+                                 |  |            |
+                                 |  |------------
+                                 |
+                                \ /
+                                main-end
+
+
+
+
+                                              flex-direction: column-reverse
+
+                                main-end
+                                / \
+                                 |  --------------
+                                 |  |            |
+                                 |  |            |
+                       main axis |  |            |
+                                 |  |            |
+                                 |  |            |
+                                 |  |            |
+                                 |  |            |
+                                 |  |            |
+                                 |  |            |
+                                 |  |------------      cross-axis
+                               cs ------------------------> ce
+                                main-start
+
+
+        - FLEX-WRAP (empacotamento ou encapsulamento):
+
+            - Configura o comportamento do container (do pai).
+            - Por padrão fica configurado como nowrap, não encapsula, não quebra o conteudo, ou seja, se o container encolher bastante, o conteudo não começa a ir para baixo por exemplo, mas sim começa a encolher com o container. O encolhimento do conteúdo vai depender da capacidade de encolhimento do elemnto. Por exemplo, se for um texto com palavras muito grandes, ele fica com o
+            tamanho da palavra mais longa, e se não der então ele quebra a palavra.
+
+            - wrap -> quando o container encolhe bastante o ultimo bloco (o ultimo elemento) é quebrado, ou seja, vai para a outra linha ou coluna dependendo do
+            flex-direction; se for row, vai para a linha de baixo (cross-axis de cima para baixo). Ou seja, a quebra do elemento é sempre no sentido do eixo transversal (cross-axis)
+
+            - wrap-reverse -> é igual ao wrap, só que a quebra é no sentido oposto ao cross-axis
+
+
+            shorthand para flex-direction e flex-wrap -> flex-flow (flex-direction + flex-wrap): flex-flow: direction wrap. Exemplo para
+            flex-direction: row e flex-wrap: nowrap: flex-flow: row nowrap
+
+
+
+    - ALINHAMENTO DOS EIXOS (justify-content e align-items):
+
+        - Estes ficam definidos no pai (no container)
+
+        - justify-content: faz o alinhamento em relação ao main axis (ao eixo principal), ou seja, faz na direção do main axis; se for row faz da esquerda para a direira, row-reversed da direita para a esquerda etc etc...
+
+        - valores para justify-content:
+
+            - flex-start: o primeiro item vai ficar "grudado" no main-start e caso exista um espaço livre, ele fica no final, perto do main-end.
+
+            - flex-end: o último item fica no main-end, e se existir espaço livre (que não contem itens), ele fica no main-start
+
+            - center: calcula exatamente o centro do container, coloca todos os itens juntos no centro (ficam todos no centro do main-axis), e os espaços em branco são distribuidos de forma igual no main-start e no main-end.
+
+            - space-between: coloca o primeiro item no main-start e o último item no main-end. Todos os outros itens ficam no meio (entre o primeiro e o ultimo), com um espaçamento igual entre eles todos.
+
+            - space-evenly: coloca os itens dentro do container de uma forma que antes e depois dos itens tenhamos espaços iguais. O space-evenly não coloca o primeiro item no main-start nem o último item no main-end.
+
+            - space-around: divide o container em espaços iguais consoante o número de itens que vamos ter, por exemplo, se vamos ter três itens, divide o container em três espaços iguais. Depois coloca cada item no centro de cada um desses espaços.
+
+
+        - align-items: Faz o alinhamento em relação (no sentido) do cross axis (eixo tranversal).
+
+        - valores para align-items:
+
+            - stretch: estica os itens
+
+            - flex-start: faz os itens grudarem na parte do inicio do eixo transversal (o cross-start).
+
+            - flex-end: os itens ficam no cross-end
+
+            - center: centraliza os itens entre o cross-start e o cross-end
+
+
+    - CENTRALIZAR COM FLEXBOX:
+
+
+        - basta colocar justify-content: center e e align-items: center.. feito!!
+
+
+
+    - ALINHAMENTO EMPACOTADO (alinhamento quando usamos o wrap ou wrap-reverse):
+
+
+        - align-content: alinha os elementos no eixo transversal (cross-axis), quando eles
+        estão empacotados (com o flex-wrap: wrap)
+
+        - valores para align-content:
+
+            - stretch: pega a dimensão inteira do container e divide em partes iguais. Coloca os elementos dentro, pega a dimensão do cross-axis de todos o itens, e
+            puxa-os para baixo ou para o lado, dependendo da orientação (row colum etc)
+            Este é o valor padrão do align-content.
+
+            - flex-star: Pega os elementos e gruda-os no cross-start
+
+            - flex-end: gruda os elementos no cross-end
+
+            - center: alinha os elementos no centro do cross-axis
+
+            - space-between: O mesmo que o space-between, mas agora em relação ao cross-axis. Pega os primeiros elementos e gruda no cross-start, pega os últimos elementos e gruda no cross-end e todos os outros elementos, se existirem ficam no meio entre os primeiros e últimos com espacamento igual entre eles.
+
+            - space-evenly: espaço igual entre todos os elementos, como no space-evenly relativo ao main-axis, mas aqui é relativo ao cross-axis.
+
+            - space-around: igual ao space-around do justify-content mas ao invez de usar o main axis usa o cross-axis..
+
+
+
+    - PROPRIEDADES DOS ITENS DENTRO DO FLEXBOX:
+
+
+        - order: altera a ordem de exibição dos elementos no container.
+          Todo o item dentro do container tem por padrão order: 0.
+          Tendo 4 itens em um container orientado a row, por exemplo, se tivermos assim:
+          elemento1: order: 3; elemento2: order: 5; elemento3: order: -2; elemento4: order: 0;
+          Os elementos serão mostrados (usando row, da esquerda para a direita), -2 0 3 5
+
+
+        - align-self: aplica-se aos itens dentro do container, a cada um dos itens, e funciona no cross-axis.
+
+            - valores para align-self:
+
+
+            - auto ou inherit: herda a carcayeristica vertical do seu pai (o container)
+
+            - flex-start: alinhamento perto do cross-start
+
+            - flex-end: alinhamento perto do cross-end
+
+            - center: centralizado entre o cross-start e cross-end
+
+            - stretch : estica para ocupar todo o eixo transversal (cross-axis)
+        
+
+
+        - flex-basis:  dita o tamanho dos elementos no container
+
+            - valores de flex-basis:
+
+            - auto: o padrão. O tamanho do elemento no eixo principal (main axis), ou seja, a largura se for direction row ou altura se for direction column, é ditada pelo tamanho do seu conteudo (do que tem dentro do item)
+
+            - n px: o tamanho do elemento é x pixeis (exmeplo 200px), independente do conteúdo que estiver dentro dele. Este tamanho não é absoluto. Por exemplo, se temos 4 elementos com flex-basis: 200px, se esistir espaço suficiente para isso, eles ficam com 200px cada, mas se não tiver espaço suficiente, todos eles diminuem,  por igual. Isto se usarmos nowrap. Se usarmos wrap, eles quebram e mantem o tamanho. Isto porque por exemplo, se temos um container com
+            500px, e 3 elementos cada um com 200px, não cabe..
+
+
+
+        - flex-shrink e flex-grow: configura se pode ou não aumentar e / ou diminuir.
+          Por padrão, o flex-shrink tem valor 1 (pode encolher, qualquer valor diferente de 0 que seja positivo diz que pode encolher, 0 diz que não pode encolher) e o flex-grow tem valor 0 (não pode crescer)
+
+          Exemplo, com os valores padrão, se temos um container com 450px e 3 elementos
+          cada um com o flex-basis de 150px, se o container encolher, os elementos encolhem também para se adaptarem ao novo tamanho (flex-shrink: 1).
+          Mas se aumentarmos o tamanho do container, os elementos, tendo o flex-grow com o valor padrão de 0 (não cresce), ficam iguais, não aumentam.
+          Se ativarmos os dois, flex-shrink: 1 e flex-grow: 1, aí se encolher o container, os elementos encolhem e se crescer o container eles crescem com ele.
+          Esta configuração; shrink: 1 e grow: 1 cria elementos altamente fluidos, que crescem e diminuem conforme o container.
+
+
+          - Se tivermos tres elementos onde por exemplo um tem flex-grow: 0, outro tem flex-grow: 1 e o outro tem flex-grow: 2; o primeiro não cesce, o segundo cresce e o terceiro cresce o dobro do elemento anterior (2 é o dobro de 1).
+          Mas se tivermos por exemplo um com flex-grow de 0 e os outros dois com o flex-grow de 2, aqui não tem referencia nenhuma para dizer qual é o dobro então ambos os que tem o flex-grow de 2 crescem igual (os dois crescem o mesmo).
+          O mesmo acontece com o flex-shrink ok!
+          Para crescer/diminuir o dobro triplo etc, tanto o shrink quanto o grow tem que ter uma purpoção, ou seja um elemento com valor diferente de 0 para eles saberem
+          o quanto é o dobro ou triplo etc. Por exemplo, 2 de 1 (2 vezes o tamanho de 1),
+          4 de 1 (4 vezes o tamanho de 1)..
+
+
+          - flex: a propriedade flex:, simplifica a especificação do flex-basis, flex-shrink e flex-grow, ou seja, é basixamente um shorthand. Então por exemplo, ao invéz de especificar: flex-basis: 150px; flex-grow 0 e flex-shrink: 1, por exemplo. podemos fazer: flex: 0 1 150px; (a ordem é: grow, shrink, basis).
+
+          - Outros valores usados para flex:
+
+            - flex: 0 1 auto -> são os valores padrão para as tres propriedades
+            - flex: initial -> esta é a mesma coisa que o de cima (os valores padrão)
+
+
+            - flex: 0 0 auto -> basicamente deixa os elementos não flexiveis (não encolhem e não crescem), e o tamanho, depende do tamanho do conteúdo (auto)
+            - flex: none -> igual ao de cima (sem flex kkk!)
+
+
+            - flex: 1 1 auto -> cresce á vontade, encolhe a vontade e o limite de aumentar ou diminuir (basis) é o tamanho natural do conteudo ( o contrario de 0 0 auto kkk!). O maiz flexivel que tem kk
+            - flex: auto -> o mesmo kk!
+
+
+            - flex: 3 (ou outro numero) -> O flex: grow é 3 e o shrink e basis são os valores padrão..
+            - flex: 3 1 auto -> o mesmo..
+          
