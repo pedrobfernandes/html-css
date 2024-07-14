@@ -277,3 +277,68 @@ FLEXBOX:
             - flex: 3 (ou outro numero) -> O flex: grow é 3 e o shrink e basis são os valores padrão..
             - flex: 3 1 auto -> o mesmo..
           
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+- GRID LAYOUT:
+
+
+    - Grid Layout é um sistema para a criação de layout baseado em uma grade (grid) bidimensional e otimizado para o design de interfaces de usuário.
+    Neste modelo de grade, os elementos-filhos do container que define a grade, podem ser
+    posicionados livremente em espaços criados na estrutua, quer ela tenha sido definida com as suas dimensões flexiveis ou fixas.
+    O padrão (ou primeira versão) foi criado em 2011.
+
+
+    - ANATOMIA DE UM GRID:
+
+
+        - Um grid é formado por linhas e colunas (pensa em tabuleiro de xadrez..)
+        - Todo o grid (layout de grid), tem um grid container, que é o container (div etc), que tem a especificação de grid, exemplo: display: grid.
+        - Cada intersecção no grid (interseção de linha e coluna, ou célula) é um grid item
+        - Quando temos vários itens na mesma linha, e esses itens vão desde o inicio da grade até ao final da grade, seja na horizontal ou vertical (coluna), chamamos de
+        grid track
+        - Quando temos uma trilha (track) deitada chaa-se de row track
+        - Quando temos uma trilha (track) em pé (vertical) é uma column track
+
+        - As linhas entre os itens, ou seja, as linhas que delimitam os itens, (as linhas que delimitam as celulas na planilha ou no tabuleiro de xadrez...) (tanto na horizontal como na vertical), são as grid lines
+
+        - As grid lines verticais (que delimitam as tracks de coluna) são numeradas da esquerda para a direita. A linha mais á esquerda é a linha 1.
+
+        - As grid lines horizontais (que delimitam as tracks de linha), são numeradas de cima para baixo, começando no 1.
+
+
+            grid column
+            |
+           \/
+         |   |    |-> grid line vertical
+        -|---|----|-
+         | - |--  |-> grid row
+        -|---|----|- -> grid line horizontal
+        -|---|----|-
+
+
+        - A numeração pode ser ositiva ou negativa, assim como na programação, quando
+        nos referimos a indices do array por exemplo, podemos dizer: array[-1] para nos referirmoss ao ultimo indice, [-2] penultimo etc. No grid, podemos fazer o mesmo.
+        Se temos um grid com 6 linhas e 6 colunas, ou seja onde temos 7 grid lines verticais e 7 horizontais, podemos especificar 7, ou -1; 6 ou -2 etc etc..
+
+        - Quando fazemos um agrupamento de um conjunto de itens na grid, chamamos de
+        grid area.
+
+        - Podemos colocar um espaçamento entre os itens na grade. Esse espaçamento chama-se grid gap. Conseguimos configurar o espaçamento (grid gap), sem alterar o tamanho do item.
+
+
+
+    - PROPRIEDADES DO GRID CONTAINER:
+
+
+        - Configuração básica de um grid:
+
+            - div.container {
+                display: grid;
+                grid-template-columns: valor (quantas colunas tem);
+                grid-template-rows: valor (quantas linhas e tamanho);
+                grid-gap: valor (o espaçamento entre as celulas);
+            }
